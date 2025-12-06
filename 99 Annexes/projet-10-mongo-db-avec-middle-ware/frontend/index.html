@@ -1,0 +1,29 @@
+<button onclick="ajouter()">
+   Ajouter un Film
+</button>
+<button onclick="lire()">
+    Lire
+ </button>
+<h1></h1>
+<!-- le CDN de Axios -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    const ajouter=async ()=>{
+        const film = {
+            title:'THE MATRIX',
+            imageUrl:'as',
+            note:'8.9'
+        }
+        const response = await axios.post('http://localhost:3000/api/film',film);
+        console.log(response.data);
+        //document.querySelector('h1').innerHTML =data.message;
+    }
+
+    const lire=async ()=>{
+
+        const response = await axios.get('http://localhost:3000/api/film');
+      
+        console.log(response.data);
+       // document.querySelector('h1').innerHTML =data.message;
+    }
+</script>
