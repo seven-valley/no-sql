@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:7.0
+    container_name: mongo-pokemon
+    ports:
+      - "27017:27017"
+    environment:
+      # utilisateur admin (optionnel, mais propre)
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: pokemon
+    volumes:
+      # scripts d'init (restauration + renommage de collection)
+      - ./docker/mongo-init:/docker-entrypoint-initdb.d
+      # dump bson monté dans le conteneur
+      - ./data:/dump
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express-pokemon 
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongo
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example 
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: admin

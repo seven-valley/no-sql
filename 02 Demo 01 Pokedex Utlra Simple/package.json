@@ -1,0 +1,17 @@
+{
+  "name": "correctiondemo1",
+  "version": "1.0.0",
+  "description": "1. Installer Docker et Docker Compose.\r 2. Cloner ce dépôt et se placer à la racine.\r 3. Vérifier que le dossier `data/` contient :\r    - `samples_pokemon.bson`\r    - `samples_pokemon.metadata.json`\r 4. Lancer les services :",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongodb": "^7.0.0"
+  }
+}
