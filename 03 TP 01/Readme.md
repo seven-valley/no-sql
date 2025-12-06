@@ -12,8 +12,10 @@ Nom : "Ferris Wheel", Type : "Family Ride", Capacité : 60, Durée (minutes) : 1
   
 Nom : "Haunted House", Type : "Dark Ride", Capacité : 15, Durée (minutes) : 5  
 
-- Insérer les documents suivants dans la collection tickets :
+- Insérer les documents suivants dans la collection tickets :  
+  
 attractionId correspondant à "Roller Coaster", userId : "user1", Date de visite : "2024-06-01", Utilisé : false  
+  
 attractionId correspondant à "Ferris Wheel", userId : "user2", Date de visite : "2024-06-05", Utilisé : true  
 
 ## Effectuer les opérations suivantes :
