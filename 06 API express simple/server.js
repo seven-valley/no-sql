@@ -5,8 +5,7 @@
 *
 * 1. Assurez-vous que MongoDB est en cours d'exécution (docker-compose up -d)
 * 3. Exécutez ces commandes :
-* > npm init -y
-* > npm install express mongodb
+* > npm install 
 * > node server.js
 * 
 * Allez sur http://localhost:3000/ pour vérifier que le serveur fonctionne.
